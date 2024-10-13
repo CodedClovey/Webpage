@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Page() {
     return <div>
-        <Image alt="img" src='/Webpage/home.png'
+        <Image alt="img" src='/home.png'
         className=""
         width={428}
         height={908}
