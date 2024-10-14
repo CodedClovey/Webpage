@@ -26,16 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="p-8 min-h-screen flex flex-col">
-          <p className="text-2xl text-center font-[family-name:var(--font-geist-mono)]">Abhinav Manoj</p>
-          <p className="text-1xl text-center font-[family-name:var(--font-geist-mono)] text-grey">Front-End Developer</p>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased p-8 min-h-screen flex flex-col grow bg-[url('/bg.png')] bg-cover bg-center`}
         
-          <div className={"flex grow items-center justify-center"}>
+      >
           {children}
-          </div>
-        </div>
       </body>
     </html>
   );
