@@ -9,7 +9,7 @@ export default function Page() {
             <p className="text-1xl text-center font-[family-name:var(--font-geist-mono)] text-grey">Productivity App</p>
         </div>
     
-        <div className=" flex flex-row gap-5 items-center justify-center grow">
+        <div className=" flex flex-row flex-wrap gap-5 items-center justify-center grow">
         {['/am1.png','/am2.png','/am3.png','/am4.png',].map((item,index)=>{
             return(
             <div key={index} className=" flex flex-col gap-5 items-center justify-center font-[family-name:var(--font-geist-sans)] ">
