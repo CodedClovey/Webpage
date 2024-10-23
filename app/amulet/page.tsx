@@ -7,36 +7,42 @@ const pjs = [
     {
         link: '/am1.png',
         tag: 'Schedule',
-        desc: 'Schedule your day, break down tasks and mark completed tasks',
+        desc: 'Create multiple schedules, Sort them around the week, Mark finished tasks to keep motivated.',
     },
     {
         link: '/am2.png',
-        tag: 'Focus',
-        desc: 'Set up a timer and keep focused throughout the day',
+        tag: 'Keep Focus',
+        desc: 'Set up a timer to keep track of time, stay focused and take breaks while you are working',
     },
     {
         link: '/am3.png',
-        tag: 'Notes',
-        desc: 'Note down important things or list out items and mark them',
+        tag: 'Note Down',
+        desc: 'Keep notes on important details and list down things in diffenent pages for convenience',
     },
     {
         link: '/am4.png',
-        tag: 'Calendar',
-        desc: 'Set Reminders so that you do not forget important events',
+        tag: 'Mark Dates',
+        desc: 'Set Reminders so that you do not forget important events, mark them down in your calendar',
     },
 ]
 export default function Page() {
     const [pos,setPos] = useState(0)
     return (
-    <div className="flex flex-row justify-between gap-14 px-32 py-16 grow" >
+    <div className="flex flex-row justify-between gap-14 px-16 py-16 grow bg-white rounded-3xl" >
         <div className="flex flex-col justify-between">
-            <div className="flex flex-col ">
-                <p className="text-2xl text-left font-[family-name:var(--font-geist-mono)]">Amulet</p>
-                <p className="text-1xl text-left font-[family-name:var(--font-geist-mono)] text-grey">Productivity App</p>
+            <div className="flex flex-col w-24">
+                <Image
+                    alt="img" src="/amulet.png"
+                    className="hidden md:block"
+                    width={100}
+                    height={100}
+                ></Image>
+                <p className="text-2xl text-center font-[family-name:var(--font-roboto)] font-black">AMULET</p>
             </div>
+            
             <div>
                 <div className="my-7 ">
-                    <p className="text-1xl text-left font-[family-name:var(--font-geist-mono)] text-grey">{pjs[pos].desc}</p>
+                    <p className="text-2xl text-left font-[family-name:var(--font-roboto)] text-grey">{pjs[pos].desc}</p>
                 </div>
                 <div className="flex flex-row flex-wrap gap-3">
                 {
@@ -46,8 +52,8 @@ export default function Page() {
                                 setPos(index)
                             }
                             }>
-                                <div className="bg-cyan-700 px-8 py-2 rounded-xl">
-                                    <p className="text-slate-100 font-[family-name:var(--font-geist-mono)]">{item.tag}</p>
+                                <div className={`${pos==index?'bg-[#dadaba]':'bg-[#EBEBD9]'} px-8 py-2 rounded-xl`}>
+                                    <p className="font-[family-name:var(--font-roboto)]">{item.tag}</p>
                                 </div>
                             </button>
                         )
