@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Roboto } from 'next/font/google';
 
-export const roboto = Roboto({
+const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
   weight: ['400','900']

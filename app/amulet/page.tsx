@@ -28,20 +28,25 @@ const pjs = [
 export default function Page() {
     const [pos,setPos] = useState(0)
     return (
-    <div className="flex flex-row justify-between gap-14 px-16 py-16 grow bg-white rounded-3xl" >
-        <div className="flex flex-col justify-between">
-            <div className="flex flex-col w-24">
-                <Image
-                    alt="img" src="/amulet.png"
-                    className="hidden md:block"
-                    width={100}
-                    height={100}
-                ></Image>
-                <p className="text-2xl text-center font-[family-name:var(--font-roboto)] font-black">AMULET</p>
+    <div className="flex flex-row justify-between gap-0 px-16 py-16 grow bg-white rounded-3xl" >
+        <div className="flex flex-col justify-between grow">
+            <div className="flex flex-row">
+                <div className="flex flex-col w-24">
+                    <Image
+                        alt="img" src="/amulet.png"
+                        className="hidden md:block"
+                        width={100}
+                        height={100}
+                    ></Image>
+                    <p className="text-2xl text-center font-[family-name:var(--font-roboto)] font-black">AMULET</p>
+                    
+                </div>
+                <div className="flex grow justify-center items-center ">
+                    <p className="text-xl text-gray-400">The All-in-One Productivity App</p>
+                </div>
             </div>
-            
-            <div>
-                <div className="my-7 ">
+            <div className=" justify-end">
+                <div className="my-7 flex-grow">
                     <p className="text-2xl text-left font-[family-name:var(--font-roboto)] text-grey">{pjs[pos].desc}</p>
                 </div>
                 <div className="flex flex-row flex-wrap gap-3">
@@ -63,7 +68,7 @@ export default function Page() {
             </div>
         </div>
 
-        <div className=" flex flex-col gap-5 items-center justify-center font-[family-name:var(--font-geist-sans)] ">
+        <div className=" flex gap-5 items-center justify-center font-[family-name:var(--font-geist-sans)] bg-slate-200">
             <div className='border-4 rounded-lg border-gray-300 drop-shadow-2xl transition ease-in-out hover:scale-105'>
                 <Image
                 alt="img" src={pjs[pos].link}
