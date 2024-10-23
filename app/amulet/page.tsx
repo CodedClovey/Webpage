@@ -41,7 +41,7 @@ export default function Page() {
                     <p className="text-2xl text-center font-[family-name:var(--font-roboto)] font-black">AMULET</p>
                     
                 </div>
-                <div className="flex grow justify-center items-center ">
+                <div className="hidden md:flex grow justify-center items-center ">
                     <p className="text-xl text-gray-400">The All-in-One Productivity App</p>
                 </div>
             </div>
@@ -68,7 +68,7 @@ export default function Page() {
             </div>
         </div>
 
-        <div className=" flex gap-5 items-center justify-center font-[family-name:var(--font-geist-sans)] bg-slate-200">
+        <div className=" hidden md:flex items-center justify-center">
             <div className='border-4 rounded-lg border-gray-300 drop-shadow-2xl transition ease-in-out hover:scale-105'>
                 <Image
                 alt="img" src={pjs[pos].link}
