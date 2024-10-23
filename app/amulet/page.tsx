@@ -33,7 +33,7 @@ export default function Page() {
             <div className="flex flex-row">
                 <div className="flex flex-col w-24">
                     <Image
-                        alt="img" src="/amulet.png"
+                        alt="img" src="/amuletapp.png"
                         className="hidden md:block"
                         width={100}
                         height={100}

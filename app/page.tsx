@@ -13,7 +13,7 @@ export default function Home() {
         <Link href={'/amulet'}>
           <div className="flex transition ease-in-out hover:scale-105 ">
                   <Image
-                    alt="img" src="/amulet.png"
+                    alt="img" src="/amuletapp.png"
                     className=""
                     width={100}
                     height={100}
