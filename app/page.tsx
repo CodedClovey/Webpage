@@ -11,17 +11,17 @@ export default function Home() {
       </div>
       <div className="flex grow items-center justify-center">
         <Link href={'/amulet'}>
-          <div className="flex transition ease-in-out hover:scale-105 ">
+          <div className="flex flex-col transition ease-in-out hover:scale-105 group">
                   <Image
                     alt="img" src="/amuletapp.png"
                     className=""
                     width={100}
                     height={100}
                   ></Image>
+                  <p className="hidden group-hover:block text-2xl text-center font-[family-name:var(--font-roboto)] font-black">AMULET</p>
           </div>
         </Link>
       </div>
-
     </div>
   );
 }
