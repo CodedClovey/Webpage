@@ -1,7 +1,11 @@
 'use client'
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+
+import { MdPlayArrow } from "react-icons/md";
+
 
 const pjs = [
     {
@@ -28,7 +32,7 @@ const pjs = [
 export default function Page() {
     const [pos,setPos] = useState(2)
     return (
-    <div className="flex flex-row justify-between gap-0 px-16 py-16 grow bg-white rounded-3xl" >
+    <div className="flex flex-row justify-between gap-0 px-16 py-16 grow bg-white rounded-xl" >
         <div className="flex flex-col justify-between grow">
             <div className="flex flex-col md:flex-row items-center">
                 <div className="flex flex-col w-24">
@@ -42,11 +46,24 @@ export default function Page() {
                     
                 </div>
                 <div className="flex grow justify-center items-center max-w-xl">
-                    <p className="text-xl text-gray-400">The All-in-One Productivity App</p>
+                    <Link href={'https://www.youtube.com/watch?v=vTyiE9Lu0C4'} target="_blank">
+                    
+                    <div className=" flex flex-row">
+                        <MdPlayArrow className='fill-gray-400 text-2xl w-10 pt-1 '></MdPlayArrow>
+                        <p className="text-xl text-gray-400">The All-in-One Productivity App</p>
+                    </div>
+                    </Link>
                 </div>
             </div>
             <div className=" justify-end">
                 <div className="my-7 flex-grow max-w-2xl">
+                    <div className="flex grow justify-start items-center ">
+                        <Link href={'https://groups.google.com/g/amuletapp'}>
+                        <div className="rounded-lg bg-gray-800 py-2 px-5 mb-2">
+                            <p className="text-gray-100">Dowload</p>
+                        </div>
+                        </Link>
+                    </div>
                     <p className="text-2xl text-left font-[family-name:var(--font-roboto)] text-grey">{pjs[pos].desc}</p>
                 </div>
                 <div className="flex flex-row flex-wrap gap-3">
