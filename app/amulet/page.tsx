@@ -59,8 +59,8 @@ export default function Page() {
                 <div className="my-7 flex-grow max-w-2xl">
                     <div className="flex grow justify-start items-center ">
                         <Link href={'https://groups.google.com/g/amuletapp'}>
-                        <div className="rounded-lg bg-gray-800 py-2 px-5 mb-2">
-                            <p className="text-gray-100">Dowload</p>
+                        <div className="rounded-lg bg-gray-700 py-2 px-5 mb-2">
+                            <p className="text-gray-100 font-[family-name:var(--font-roboto)]">Dowload</p>
                         </div>
                         </Link>
                     </div>
