@@ -1,5 +1,6 @@
 'use client'
 
+import Rive from "@rive-app/react-canvas";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -32,16 +33,11 @@ const pjs = [
 export default function Page() {
     const [pos,setPos] = useState(2)
     return (
-    <div className="flex flex-row justify-between gap-0 px-16 py-16 grow bg-white rounded-xl" >
+    <div className="flex flex-row justify-between gap-0 px-16 py-16 grow rounded-xl" >
         <div className="flex flex-col justify-between grow">
             <div className="flex flex-col md:flex-row items-center">
                 <div className="flex flex-col w-24">
-                    <Image
-                        alt="img" src="/amuletapp.png"
-                        className="hidden md:block"
-                        width={100}
-                        height={100}
-                    ></Image>
+                    <Rive src='/web.riv' className="h-24 w-24"/>
                     <p className="text-2xl text-center font-[family-name:var(--font-roboto)] font-black">AMULET</p>
                     
                 </div>
