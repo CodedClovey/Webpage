@@ -1,49 +1,66 @@
 'use client'
-import Link from "next/link";
 
-import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
-import { MouseEvent, MouseEventHandler } from "react";
+import { Alignment, EventType, Fit, Layout, RiveEventType, useRive, useStateMachineInput } from '@rive-app/react-canvas';
+import {useEffect} from "react";
+
+// { 
+//   ( numX!=null && numX?.value==2) &&
+//   <div className="absolute flex mx-96 my-10">
+//     <iframe width="800" height="500" src="https://www.youtube.com/embed/KfiwhfqsAUg?si=K7NkRcDcPC6XPhVM" 
+//       title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+//       referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
+//     </iframe>
+//   </div>
+// }
 
 export default function Home() {
+
   const {
     rive, RiveComponent
   } = useRive(
     {
-      src: "web.riv",
-      stateMachines: "Amulet",
+      src: "website.riv",
+      stateMachines: "State Machine 1",
       autoplay: true,
+      automaticallyHandleEvents: true,
+      layout: new Layout({
+        fit: Fit.Cover,
+        alignment: Alignment.Center,
+    }),
     },
   );
 
-  const numX = useStateMachineInput(rive, "State Machine 1", "Number 1", 100);
+  const numX = useStateMachineInput(rive, "State Machine 1", "page");
 
-  const onMouseMove: MouseEventHandler<HTMLDivElement> = (
-    e: MouseEvent<HTMLDivElement>
-  ) => {
-    if (!numX) {
-      return;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onRiveEventReceived = (riveEvent:any) => {
+    const eventData = riveEvent.data;
+    const eventProperties = eventData.properties;
+    if (eventData.type === RiveEventType.General) {
+    console.log("Event name", eventData.name);
+    // Added relevant metadata from the event
+    console.log("Rating", eventProperties.rating);
+    console.log("Message", eventProperties.message);
+    } else if (eventData.type === RiveEventType.OpenUrl) {
+    console.log("Event name", eventData.name);
+    // Handle OpenUrl event manually
+    //window.location.href = data.url;
     }
-    const maxWidth = window.innerWidth;
-    numX.value = (e.clientX / maxWidth) * 100;
-  };
+};
+
+// Wait until the rive object is instantiated before adding the Rive
+// event listener
+useEffect(() => {
+    if (rive) {
+    rive.on(EventType.RiveEvent, onRiveEventReceived);
+    }
+}, [rive]);
 
   return (
-    <div className="flex flex-col grow md:px-40" onMouseMove={onMouseMove}>
-      <div className="flex flex-col justify-center">
-        <p className="text-2xl text-center font-[family-name:var(--font-roboto)] text-neutral-950 tracking-[0.3em] border-b-2">ABHINAV MANOJ</p>
-      </div>
-      
-      <div className="flex grow flex-col items-center justify-center gap-3">
-        <Link href={'/amulet'}>
-          <div className="flex flex-col group ">
-              <div className="w-96 h-96" >
-                <RiveComponent />
-              </div>
-                  {
-                    //<p className="hidden group-hover:block text-2xl text-center font-[family-name:var(--font-roboto)] font-black text-slate-200">AMULET</p>
-                  }
-          </div>
-        </Link>
+    <div>
+
+      <div className="block h-screen">
+        <RiveComponent />
       </div>
     </div>
   );
