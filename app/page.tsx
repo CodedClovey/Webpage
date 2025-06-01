@@ -1,6 +1,6 @@
 'use client'
 
-import { Alignment, EventType, Fit, Layout, RiveEventType, useRive, useStateMachineInput } from '@rive-app/react-canvas';
+import { Alignment, EventType, Fit, Layout, RiveEventType, useRive, } from '@rive-app/react-canvas';
 import {useEffect} from "react";
 
 // { 
@@ -30,7 +30,7 @@ export default function Home() {
     },
   );
 
-  const numX = useStateMachineInput(rive, "State Machine 1", "page");
+  //const numX = useStateMachineInput(rive, "State Machine 1", "page");
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onRiveEventReceived = (riveEvent:any) => {
