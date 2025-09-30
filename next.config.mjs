@@ -4,7 +4,6 @@
 
 const nextConfig = {
     //basePath: isProd ? '/Webpage' : '',
-    output: 'export',
     images: {
         unoptimized: true,
     }
